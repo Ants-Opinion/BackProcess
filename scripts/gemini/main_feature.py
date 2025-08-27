@@ -13,7 +13,7 @@ def daily_scoring(for_gemini_crawled_data, data):
                 
             ask = str(for_gemini_crawled_data[sector][date])
 
-            data[sector][date] = client.ask(sector, ask)
+            data[sector][date] = client.ask_daily(sector, ask)
             print("sector: ", sector, "date: ", date)
 
     return data

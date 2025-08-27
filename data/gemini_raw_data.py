@@ -62,3 +62,26 @@ def gemini_prompt(sector, data):
         }}
     }}'''
     return sector_discription + defult_prompt + data
+
+
+def gemini_week_prompt(sector, data):
+    sector_discription = f"다음은 텔레그램 주식 정보 채널에서 {sector} 산업에 일주일 동안 요약한 주간 분석입니다."
+    defult_prompt = f'''
+    각각의 positive, neutral, negative을 기반으로 주간 분석을 작성해주세요.
+    주간 분석은 주간 주요 뉴스 제목과 요약을 포함해야 합니다.
+    결과는 아래 형식으로 JSON 형태로 출력해 주세요:
+    "summary": {{
+        "positive": {{
+            "headline": "헤드라인",
+            "summary": "요약"
+        }},
+        "neutral": {{
+            "headline": "헤드라인",
+            "summary": "요약"
+        }},
+        "negative": {{
+            "headline": "헤드라인",
+            "summary": "요약"
+        }}
+    }}'''
+    return sector_discription + defult_prompt + data
